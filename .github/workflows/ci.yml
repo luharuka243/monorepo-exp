@@ -25,7 +25,7 @@ jobs:
           pants --version
 
       - name: Check code formatting
-        run: 'pants fmt --check ::'
+        run: 'pants fmt ::'
 
       - name: Run linters
         run: 'pants lint ::'
