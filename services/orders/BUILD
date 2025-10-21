@@ -11,7 +11,7 @@ docker_image(
     instructions=[
         "FROM python:3.12-slim",
         "WORKDIR /app",
-        "COPY orders_app.pex ./",
+        "COPY services.orders/orders_app.pex ./orders_app.pex",
         "EXPOSE 8001",
         'ENTRYPOINT ["./orders_app.pex"]',
     ],
