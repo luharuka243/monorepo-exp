@@ -25,16 +25,16 @@ jobs:
           pip install "pantsbuild.pants==2.29.0"
 
       - name: Check code formatting
-        run: pants fmt ::
+        run: 'pants fmt --check ::'
 
       - name: Run linters
-        run: pants lint ::
+        run: 'pants lint ::'
 
       - name: Typecheck
-        run: pants typecheck ::
+        run: 'pants typecheck ::'
 
       - name: Run tests
-        run: pants test ::
+        run: 'pants test ::'
 
       - name: Build Docker images
         run: |
