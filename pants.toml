@@ -44,3 +44,6 @@ resolves = { python-default = "python-default.lock"}
 #  problematic system Pythons. See
 #  https://www.pantsbuild.org/docs/python-interpreter-compatibility#changing-the-interpreter-search-path.
 search_path = ["<PATH>", ".venv/bin"]
+
+[flake8]
+args = ["--max-line-length=88"]

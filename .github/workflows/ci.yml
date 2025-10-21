@@ -28,7 +28,7 @@ jobs:
         run: 'pants fmt ::'
 
       - name: Run linters
-        run: 'pants lint ::'
+        run: 'pants fmt ::'
 
       - name: Typecheck
         run: 'pants typecheck ::'

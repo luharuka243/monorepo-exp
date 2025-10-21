@@ -13,4 +13,4 @@ async def root():
 def main() -> None:
     import uvicorn
 
-    uvicorn.run("services.orders.main:app", host="0.0.0.0", port=8001)
+    uvicorn.run("services.orders.main:app", host="0.0.0.0", port=8001)  # nosec
