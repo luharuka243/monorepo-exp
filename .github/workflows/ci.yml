@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ci:
+    name: Lint, Test, and Package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install Pants
+        run: |
+          python -m pip install --upgrade pip
+          pip install "pantsbuild.pants==2.29.0"
+
+      - name: Check code formatting
+        run: pants fmt --check ::
+
+      - name: Run linters
+        run: pants lint ::
+
+      - name: Typecheck
+        run: pants typecheck ::
+
+      - name: Run tests
+        run: pants test ::
+
+      - name: Build Docker images
+        run: |
+          pants package services/orders:orders_image
+          pants package services/users:users_image
+          pants package services/payments:payments_imagehow to test if this ci pipeline will owrk
