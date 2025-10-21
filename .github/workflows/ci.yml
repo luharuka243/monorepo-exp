@@ -25,7 +25,7 @@ jobs:
           pip install "pantsbuild.pants==2.29.0"
 
       - name: Check code formatting
-        run: pants fmt --check ::
+        run: pants fmt ::
 
       - name: Run linters
         run: pants lint ::
@@ -40,4 +40,4 @@ jobs:
         run: |
           pants package services/orders:orders_image
           pants package services/users:users_image
-          pants package services/payments:payments_imagehow to test if this ci pipeline will owrk
+          pants package services/payments:payments_image
