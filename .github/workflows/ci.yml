@@ -28,10 +28,10 @@ jobs:
         run: 'pants fmt ::'
 
       - name: Run linters
-        run: 'pants fmt ::'
+        run: 'pants lint ::'
 
       - name: Typecheck
-        run: 'pants typecheck ::'
+        run: 'pants check ::'
 
       - name: Run tests
         run: 'pants test ::'
